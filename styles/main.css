@@ -32,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   background: url(../images/home-background.svg) no-repeat;
   background-position: 35vw bottom;
+  background-size: 60%;
 }
 
 #page-home .content {
@@ -134,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
 
   #page-home header a {
     position: absolute;
-    bottom: 48px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -144,8 +145,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media(max-width: 425px) { 
+@media(max-width: 500px) { 
   #page-home main h1 {
     font-size: 40px;
+  }
+}
+
+@media(max-width: 375px) { 
+  #page-home main h1 {
+    font-size: 40px;
+  }
+
+  #page-home header a {
+    bottom: 0px;
   }
 }
