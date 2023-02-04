@@ -3,12 +3,22 @@ const server = express()
 
 server.use(express.static('public'))
 
+const nunjucks = require('nunjucks')
+nunjucks.configure('src/views', {
+  express: server,
+  noCache: true
+})
+
 server.get('/home', (req, res) => {
-  res.sendFile(__dirname + '/views/home.html')
+  return res.render('home.html')
 })
 
 server.get('/create-point', (req, res) => {
-  res.sendFile(__dirname + '/views/create-point.html')
+  return res.render('create-point.html')
+})
+
+server.get('/search', (req, res) => {
+  return res.render('search-results.html')
 })
 
 server.listen(3000)
